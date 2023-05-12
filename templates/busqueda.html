@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda</title>
+    <link rel="stylesheet" href="/static/styles.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+<body>
+    <form name="formSearch" method="POST" action=" {{ url_for('buscador') }} " class="form-search">
+        <label for="busqueda">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+        <input type="text" name="buscar" placeholder="Ingrese una busqueda" id="buscar">
+        <button type="submit">
+            <i class="bi bi-search search_icon"> Buscar </i>
+        </button>
+    </form>
+
+    
+    <div>
+        <h4>Resultado<hr></h4>
+        {% if (miData) %}
+        <section>
+            <p>
+                Nombre de Usuario: <strong> {{ miData.nombre }} </strong>
+            </p>
+            <p>
+                Email del Usuario: <strong> {{ miData.correo }} </strong>
+            </p>
+        </section>
+
+        {% else %}
+        <p>No hay resultados de la busqueda:
+            <strong> {{ buscador }} </strong>
+        </p>
+
+        {% endif %}
+    </div>
+</body>
+</html>

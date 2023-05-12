@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Home</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="menu">
+        <div class="logo">
+          <img src="/static/images/logo.png" alt="Medicare">
+        </div>
+          <ul class="navbar_list">
+            <li class="list_element"><a class="list_link" href="{{ url_for('obtener_doctores') }}">Doctores</a></li>
+            <li class="list_element"><a class="list_link" href="{{ url_for('obtener_pacientes') }}">Pacientes</a></li>
+            <li class="list_element"><a class="list_link" href="{{ url_for('obtener_pacientesCita') }}">Citas</a></li>
+            <li class="list_element"><a class="list_link" href="services.html">Servicios</a></li>
+            <li class="list_element"><a class="list_link" href="contact.html">Contacto</a></li>
+            <li class="list_element"><button class="btn"><a href="http://localhost:4000/clinicalogin/logout">Logout</a></button></li>
+          </ul>
+      </div>
+      
+      
+      <!--button class="btn"><a href="http://localhost:4000/clinicalogin/logout">Logout</a></button-->
+    </nav>
+
+    <div class="container">
+      <div class="cont_left">
+        <div class="cont_text">
+          <p class="subtitle">Sirviendo a las personas</p>
+          <h1 class="title">Clinica de Especialidades</h1>
+          <p class="descrip">Salud desde la comodidad de casa</p>
+        </div>
+
+      </div>
+      <div class="cont_right">
+        <img src="/static/images/doc.png" alt="Doctor">
+      </div>
+    </div>
+  </header>
+
+</body>
+</html>

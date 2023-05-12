@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/styles.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <!--link rel="stylesheet" href="/static/style_login.css"-->
+</head>
+<body>
+    <!--div class="container">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="elegir"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Iniciar Sesión</button>
+                <button type="button" class="toggle-btn" onclick="register()">Registrarse</button>
+            </div>
+            <form id="login" class="input-group" action="{{ url_for('login') }}" method="post">
+                <input id="username" type="text" class="input-field" placeholder="Nombre de usuario" required>
+                <input id="password" type="password" class="input-field" placeholder="Contraseña" required>
+                <div class="msg"> {{ msg }} </div>
+                <button type="submit" class="submit-btn">Ingresar</button>
+            </form>
+
+            <form id="register" class="input-group">
+                <input type="text" class="input-field" placeholder="Nombre" required>
+                <input type="text" class="input-field" placeholder="Apellido Paterno" required>
+                <input type="text" class="input-field" placeholder="Apellido Materno" required>
+                <input type="email" class="input-field" placeholder="Correo electrónico" required>
+                <input type="text" class="input-field" placeholder="Nombre de usuario" required>
+                <input type="password" class="input-field" placeholder="Contraseña (Max. 10 caracteres)" required>
+                <button type="submit" class="submit-btn">Registrar</button>
+            </form>
+        </div>
+    </div-->
+
+    <div class="login">
+        <h1>MEDICARE</h1>
+        <!--img  src="/static/images/logo.png" alt="Medicare" class="logo"-->
+        <p class="info" >Cuidando tu salud desde casa</p>
+        <div class="links">
+            <a href="{{ url_for('login') }}" class="active">Inicio de Sesión</a>
+            <a href="{{ url_for('register') }}">Registrarse</a>
+        </div>
+        <form action="{{ url_for('login') }}" method="post">
+            <label for="username">
+                <i class="fas fa-user"></i>
+            </label>
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <label for="password">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            <div class="msg">{{ msg }}</div>
+            <input type="submit" value="Acceder">
+        </form>
+    </div>
+
+</body>
+</html>

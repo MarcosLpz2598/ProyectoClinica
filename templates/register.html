@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='styles.css')}} ">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+</head>
+<body>
+    
+    <div class="register">
+        <h1>MEDICARE</h1>
+        <p class="info" >Cuidando tu salud desde casa</p>
+        <div class="links">
+            <a href="{{ url_for('login') }}">Inicio de Sesión</a>
+            <a href="{{ url_for('register') }}" class="active">Registrarse</a>
+        </div>
+        <form action="{{ url_for('register') }}" method="post">
+            <label for="Nombre">
+                <i class="fas fa-user"></i>
+            </label>
+            <input type="text" name="nombre" placeholder="Nombre" id="nombre">
+            <label for="Apellido Paterno">
+                <i class="fas fa-user"></i>
+            </label>
+            <input type="text" name="apellidoPaterno" placeholder="Apellido Paterno" id="apellidoPaterno">
+            <label for="Apellido Materno">
+                <i class="fas fa-user"></i>
+            </label>
+            <input type="text" name="apellidoMaterno" placeholder="Apellido Materno" id="apellidoMaterno">
+            <label for="username">
+                <i class="fas fa-user"></i>
+            </label>
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <label for="Contraseña">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input type="password" name="password" placeholder="Contraseña" id="password" required>
+            <label for="Correo">
+                <i class="fas fa-envelope"></i>
+            </label>
+            <input type="email" name="email" placeholder="Correo electrónico" id="email" required>
+            <div class="msg">{{ msg }}</div>
+            <input type="submit" value="Registrar">
+        
+            <!--p class="bottom">Ya tienes una cuenta?  <a class="bottom" href="{{url_for('login')}}"> Inicia Sesión aquí</a></p-->
+        </form>
+
+    </div>
+
+</body>
+</html>
